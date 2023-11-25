@@ -21,7 +21,7 @@ export default function Page({ params }) {
   }
 
   // Patch Berdasarkan id
-  async function patch(newNote) {
+  async function patch() {
     await fetch(
       `https://devscale-mockapi.fly.dev/api/collections/notes/records/${params.id}`,
       {
@@ -54,7 +54,7 @@ export default function Page({ params }) {
       <button
         className="bg-blue-300 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white p-3 rounded-lg"
         onClick={() => {
-          patch(newNote);
+          patch();
         }}
       >
         Update

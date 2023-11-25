@@ -9,9 +9,6 @@ export const NoteCard = ({ created, content, id }) => {
       `https://devscale-mockapi.fly.dev/api/collections/notes/records/${id}`,
       {
         method: "DELETE",
-        headers: {
-          "Content-type": "application/json",
-        },
       }
     );
     // Menggunakan reload agar ter refresh karena menggunakan useRoute.refresh tidak bisa
@@ -28,9 +25,7 @@ export const NoteCard = ({ created, content, id }) => {
       {/* Button Hapus */}
       <button
         className="bg-rose-300 text-rose-700 rounded-lg p-2 hover:bg-rose-700 hover:text-white transition-colors duration-200"
-        onClick={() => {
-          hapus(id);
-        }}
+        onClick={hapus}
       >
         Delete
       </button>

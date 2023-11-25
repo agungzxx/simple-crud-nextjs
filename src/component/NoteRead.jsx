@@ -12,13 +12,12 @@ export const NoteRead = () => {
         cache: "no-store",
       }
     );
-    const data = await res.json();
-    setContents(data.items);
+    const { items } = await res.json();
+    setContents(items);
   }
 
   useEffect(() => {
     read();
-    console.log("amount");
   }, []);
 
   return (
